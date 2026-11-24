@@ -21,8 +21,10 @@
    PICTURE: a dimpled golf ball holding the "plays like" number, ringed by the correction, over striped turf with the shot arc and the red pin
    COLOUR and TYPE: pine green fairway, white ball, flag red accent; Big Shoulders Display (leaderboard numerals) + Manrope
    LAYOUT: native-app feel: top bar with players, four views, bottom tab bar; one column up to 600px */
-:root{color-scheme:light dark;--bg:light-dark(#edf2ec,#05110b);--card:light-dark(#ffffff,#0c1d14);--ink:light-dark(#0b1c13,#ecf3ee);--mute:light-dark(#5a6c61,#8ea596);--line:light-dark(#dde6dc,#1a3324);--track:light-dark(#e5ece3,#13291c);--green:light-dark(#17784a,#4cc47c);--soft:light-dark(#e7f2ea,#10301f);--red:#e3262b;--page:light-dark(#1c6343,#0a2418);--pine:#0a3323;--sel:light-dark(#0a3323,#1d7a4b);--pine2:#0f4a32;--gold:#e2c07a}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+:root{color-scheme:light dark;--bg:#edf2ec;--card:#ffffff;--ink:#0b1c13;--mute:#5a6c61;--line:#dde6dc;--track:#e5ece3;--green:#17784a;--soft:#e7f2ea;--red:#e3262b;--page:#1c6343;--pine:#0a3323;--sel:#0a3323;--pine2:#0f4a32;--gold:#e2c07a}
+:root[data-theme=light]{color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#05110b;--card:#0c1d14;--ink:#ecf3ee;--mute:#8ea596;--line:#1a3324;--track:#13291c;--green:#4cc47c;--soft:#10301f;--page:#0a2418;--sel:#1d7a4b}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#05110b;--card:#0c1d14;--ink:#ecf3ee;--mute:#8ea596;--line:#1a3324;--track:#13291c;--green:#4cc47c;--soft:#10301f;--page:#0a2418;--sel:#1d7a4b}
 *{box-sizing:border-box;min-width:0}
 html{-webkit-text-size-adjust:100%}
 html{background:var(--page)}
