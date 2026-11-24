@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0a3323">
+<meta name="theme-color" content="#1c6343">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -21,19 +21,20 @@
    PICTURE: a dimpled golf ball holding the "plays like" number, ringed by the correction, over striped turf with the shot arc and the red pin
    COLOUR and TYPE: pine green fairway, white ball, flag red accent; Big Shoulders Display (leaderboard numerals) + Manrope
    LAYOUT: native-app feel: top bar with players, four views, bottom tab bar; one column up to 600px */
-:root{color-scheme:light dark;--bg:light-dark(#edf2ec,#05110b);--card:light-dark(#ffffff,#0c1d14);--ink:light-dark(#0b1c13,#ecf3ee);--mute:light-dark(#5a6c61,#8ea596);--line:light-dark(#dde6dc,#1a3324);--track:light-dark(#e5ece3,#13291c);--green:light-dark(#17784a,#4cc47c);--soft:light-dark(#e7f2ea,#10301f);--red:#e3262b;--pine:#0a3323;--sel:light-dark(#0a3323,#1d7a4b);--pine2:#0f4a32;--gold:#e2c07a}
+:root{color-scheme:light dark;--bg:light-dark(#edf2ec,#05110b);--card:light-dark(#ffffff,#0c1d14);--ink:light-dark(#0b1c13,#ecf3ee);--mute:light-dark(#5a6c61,#8ea596);--line:light-dark(#dde6dc,#1a3324);--track:light-dark(#e5ece3,#13291c);--green:light-dark(#17784a,#4cc47c);--soft:light-dark(#e7f2ea,#10301f);--red:#e3262b;--page:light-dark(#1c6343,#0a2418);--pine:#0a3323;--sel:light-dark(#0a3323,#1d7a4b);--pine2:#0f4a32;--gold:#e2c07a}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Manrope,system-ui,sans-serif;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{background:var(--page)}
+body{margin:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.035) 0 64px,rgba(0,0,0,.04) 64px 128px) fixed,radial-gradient(120% 60% at 50% 0%,rgba(255,255,255,.10),transparent 60%) fixed,var(--page);min-height:100vh;color:var(--ink);font:16px/1.5 Manrope,system-ui,sans-serif;overflow-x:clip;-webkit-tap-highlight-color:transparent}
 button,input{font:inherit;color:inherit}
 .app{max-width:600px;margin:0 auto;padding:max(12px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) calc(110px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
 .num-font,.bs{font-family:'Big Shoulders Display',Impact,sans-serif;font-variant-numeric:tabular-nums}
 /* barra in alto */
 .top{display:flex;align-items:center;gap:10px;padding:4px 2px 12px}
 .mark{width:36px;height:36px;flex:none}
-.brand{font:800 30px/1 'Big Shoulders Display',Impact,sans-serif;letter-spacing:.5px}.brand b{color:var(--red)}
-.brand small{font:600 15px Manrope,system-ui,sans-serif;color:var(--mute);margin-left:6px;letter-spacing:0}
+.brand{font:800 30px/1 'Big Shoulders Display',Impact,sans-serif;letter-spacing:.5px;color:#fff}.brand b{color:var(--red)}
+.brand small{font:600 15px Manrope,system-ui,sans-serif;color:rgba(255,255,255,.72);margin-left:6px;letter-spacing:0}
 .lang{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--card)}.lang button{min-width:44px;min-height:36px;border:0;border-radius:99px;background:transparent;font-weight:800;font-size:13px;color:var(--mute);cursor:pointer}.lang button.on{background:var(--sel);color:#fff}
 .pbar{display:flex;gap:8px;overflow-x:auto;padding:0 2px 14px;scrollbar-width:none}.pbar::-webkit-scrollbar{display:none}
 .pchip{flex:none;display:flex;align-items:center;gap:8px;min-height:44px;padding:4px 14px 4px 4px;border-radius:99px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-weight:700;font-size:15px}
@@ -43,7 +44,7 @@ button,input{font:inherit;color:inherit}
 .view{display:none;flex-direction:column;gap:14px}.view.on{display:flex;animation:in .28s ease}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 /* eroe */
-.hero{position:relative;border-radius:30px;overflow:hidden;color:#fff;background:radial-gradient(120% 80% at 100% 0%,rgba(255,255,255,.12),transparent 55%),repeating-linear-gradient(100deg,rgba(255,255,255,.045) 0 46px,rgba(0,0,0,.05) 46px 92px),linear-gradient(170deg,var(--pine2),var(--pine) 70%);box-shadow:0 24px 40px -24px rgba(5,40,25,.7)}
+.hero{position:relative;border-radius:30px;overflow:hidden;color:#fff;border:1px solid rgba(255,255,255,.10);background:radial-gradient(120% 80% at 100% 0%,rgba(255,255,255,.12),transparent 55%),repeating-linear-gradient(100deg,rgba(255,255,255,.045) 0 46px,rgba(0,0,0,.05) 46px 92px),linear-gradient(170deg,var(--pine2),var(--pine) 70%);box-shadow:0 24px 40px -24px rgba(5,40,25,.7)}
 .hero-in{padding:18px 18px 0}
 .hrow{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
 .today{color:var(--gold);font-weight:700;white-space:nowrap}
@@ -61,7 +62,7 @@ button,input{font:inherit;color:inherit}
 .kv small{display:block;font-size:13px;color:rgba(255,255,255,.75);line-height:1.3;margin-top:2px}
 .fig{position:relative;height:118px;margin-top:6px}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
 /* schede */
-.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px 16px 12px;box-shadow:0 1px 0 rgba(0,0,0,.02),0 14px 30px -22px rgba(0,40,20,.35)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px 16px 12px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 18px 34px -20px rgba(0,20,10,.55)}
 h2{display:flex;align-items:center;gap:8px;font:800 23px/1.1 'Big Shoulders Display',Impact,sans-serif;letter-spacing:.3px;margin:0 0 6px}
 h2 svg{width:22px;height:22px;color:var(--green);flex:none}
 .sub{color:var(--mute);font-size:14px;margin:0 0 6px}
@@ -124,13 +125,13 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bor
 /* impostazioni */
 .set{display:grid;grid-template-columns:minmax(0,1fr) 6.5em;gap:8px 10px;align-items:center;margin:10px 0}
 .set label{font-weight:600;font-size:15px}
-.note{color:var(--mute);font-size:13.5px;margin:4px 2px 0}
+.note{color:rgba(255,255,255,.78);font-size:13.5px;margin:4px 2px 0}
 .inst p{margin:6px 0}
 /* barra in basso */
-.tabs{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(600px,100%);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--card) 86%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);z-index:5}
-.tab{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:54px;justify-content:center;border:0;background:transparent;border-radius:16px;font-size:12px;font-weight:700;color:var(--mute);cursor:pointer}
+.tabs{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(600px,100%);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));background:rgba(7,38,25,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.10);z-index:5}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:54px;justify-content:center;border:0;background:transparent;border-radius:16px;font-size:12px;font-weight:700;color:rgba(255,255,255,.62);cursor:pointer}
 .tab svg{width:24px;height:24px}
-.tab.on{color:var(--green);background:var(--soft)}
+.tab.on{color:#fff;background:rgba(255,255,255,.14)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
